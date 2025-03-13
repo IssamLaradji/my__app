@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PsychSafe - Psychedelics Safety Resource</title>
+    <style>
+        :root {
+            --primary-color: #5d4a7e;
+            --secondary-color: #a3c9a8;
+            --accent-color: #f9c784;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            background-color: #4a3a68;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(93, 74, 126, 0.8), rgba(93, 74, 126, 0.8)), 
+                        url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #f0b86c;
+            transform: translateY(-2px);
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .section {
+            margin: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .resources {
+            background-color: var(--secondary-color);
+            padding: 3rem 0;
+        }
+        
+        .resources .card {
+            height: 100%;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .disclaimer {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PsychSafe</h1>
+        <p>Promoting Safety and Harm Reduction</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#safety">Safety Guidelines</a></li>
+            <li><a href="#substances">Substances</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#emergency">Emergency Help</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Knowledge is Safety</h1>
+            <p>Providing evidence-based information to help people make informed decisions and reduce potential harms associated with psychedelic use.</p>
+            <a href="#safety" class="btn">Safety Guidelines</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="disclaimer">
+            <h3>Important Disclaimer</h3>
+            <p>This website provides harm reduction information only. We do not encourage illegal activities. Always consult healthcare professionals for medical advice.</p>
+        </div>
+        
+        <section id="about" class="section">
+            <div class="section-title">
+                <h2>About PsychSafe</h2>
+            </div>
+            <p>PsychSafe is dedicated to providing accurate, science-based information about psychedelics with a focus on harm reduction and safety. Our goal is to help individuals make informed decisions and minimize risks.</p>
+            <p>While we recognize the potential therapeutic benefits being studied in clinical settings, we emphasize that recreational use carries risks that should be understood and respected.</p>
+        </section>
+        
+        <section id="safety" class="section">
+            <div class="section-title">
+                <h2>Safety Guidelines</h2>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <h3>Set and Setting</h3>
+                        <p>The importance of mindset and environment when using psychedelics. How to create a safe, comfortable space and prepare mentally.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <h3>Dosage Information</h3>
+                        <p>Understanding appropriate dosages, the risks of taking too much, and the importance of starting low, especially for beginners.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="card-content">
+                        <h3>Trip Sitters</h3>
+                        <p>The role of a sober, trusted friend as a trip sitter, how they can help, and what they should know to assist effectively.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="substances" class="section">
+            <div class="section-title">
+                <h2>Common Substances</h2>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Psilocybin Mushrooms</h3>
+                        <p>Information about effects, duration, potential risks, and specific safety considerations for psilocybin mushrooms.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>LSD</h3>
+                        <p>Information about effects, duration, potential risks, and specific safety considerations for LSD.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>DMT</h3>
+                        <p>Information about effects, duration, potential risks, and specific safety considerations for DMT.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>MDMA</h3>
+                        <p>Information about effects, duration, potential risks, and specific safety considerations for MDMA.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Helpful Resources</h2>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Drug Testing Kits</h3>
+                        <p>Information about reagent testing kits, how to use them, and why testing substances is an important harm reduction practice.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Integration Practices</h3>
+                        <p>How to process and integrate psychedelic experiences in a healthy way, including journaling, meditation, and therapy options.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Research Organizations</h3>
+                        <p>Links to reputable organizations conducting research on psychedelics, such as MAPS, Johns Hopkins, and others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="emergency" class="section">
+            <div class="section-title">
+                <h2>Emergency Information</h2>
+            </div>
+            <div class="card" style="max-width: 800px; margin: 0 auto;">
+                <div class="card-content">
+                    <h3>Difficult Experiences</h3>
+                    <p>How to handle challenging psychedelic experiences, including grounding techniques and when to seek help.</p>
+                    
+                    <h3 style="margin-top: 1.5rem;">When to Get Medical Help</h3>
+                    <p>Signs that indicate medical attention is needed, and what to tell medical professionals.</p>
+                    
+                    <h3 style="margin-top: 1.5rem;">Helplines</h3>
+                    <p>Fireside Project Psychedelic Support Line: <strong>(623) 473-7433</strong><br>
+                    Available 11am-11pm PT every day</p>
+                    <p>National Poison Control Center: <strong>1-800-222-1222</strong></p>
+                    <p>Emergency Services: <strong>911</strong> (US) or your local emergency number</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>PsychSafe &copy; 2023 - A harm reduction resource</p>
+            <p>This website is for educational purposes only. Always consult healthcare professionals for medical advice.</p>
+        </div>
+    </footer>
+</body>
+</html>
